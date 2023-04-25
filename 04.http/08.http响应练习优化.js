@@ -14,6 +14,12 @@ const root = __dirname + '/page'
 
 // 创建服务对象
 const server = http.createServer((request, response) => {
+    if (request.method !== 'GET') {
+        response.statusCode = 405
+        response.end('<h1>405 Method Not Allowed</h1>')
+        return
+    }
+
     // 获取请求url的路径
     let { pathname } = new URL(request.url, 'http://127.0.0.1')
 
@@ -22,10 +28,25 @@ const server = http.createServer((request, response) => {
     // 读取文件 fs 异步api
     fs.readFile(filePath, (err, data) => {
         if (err) {
-            // 设置响应头，优先级比前端html中设置meta的优先级更高
-            response.setHeader('content-type','text/html;charset=utf-8')
-            response.statusCode = 500
-            response.end('文件读取失败')
+            // console.log(err)
+            // 设置字符集
+            response.setHeader('content-type', 'text/html;charset=utf-8')
+            // 判断错误
+            switch (err.code) {
+                case 'ENOENT':
+                    response.statusCode = 404
+                    response.end('<h1>404 Not Found</h1>')
+                    break
+                case 'EPERM':
+                    response.statusCode = 403
+                    response.end('<h1>403 Forbidden</h1>')
+                    break
+                default:
+                    response.statusCode = 500
+                    response.end('<h1>500 Internal Server Error</h1>')
+                    break
+
+            }
             return
         }
         // 响应文件内容
