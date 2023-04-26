@@ -1,0 +1,28 @@
+{
+    "singers": [
+        {
+            "singer_name": "周杰伦",
+            "id": 1
+        },
+        {
+            "singer_name": "陈奕迅",
+            "id": 2
+        },
+        {
+            "singer_name": "许嵩",
+            "id": 3
+        },
+        {
+            "singer_name": "张国荣",
+            "id": 4
+        },
+        {
+            "singer_name": "林俊杰",
+            "id": 5
+        },
+        {
+            "singer_name": "韩红",
+            "id": 6
+        }
+    ]
+}
