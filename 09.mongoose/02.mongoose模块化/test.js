@@ -13,6 +13,4 @@ db(() => {
         }
         console.log(data)
     })
-}, () => {
-    console.log('连接失败')
 })
