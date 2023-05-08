@@ -1,0 +1,28 @@
+{
+  "accounts": [
+    {
+      "id": "Ysca8lZny",
+      "title": "饿强强",
+      "time": "2023-03-28",
+      "type": "1",
+      "account": "123",
+      "remarks": "恶趣味"
+    },
+    {
+      "id": "3Zr73nrId",
+      "title": "买狗",
+      "time": "2023-04-30",
+      "type": "-1",
+      "account": "300",
+      "remarks": "好狗狗"
+    },
+    {
+      "id": "uzjxYQdvs",
+      "title": "买狗",
+      "time": "2023-04-30",
+      "type": "-1",
+      "account": "300",
+      "remarks": "好狗狗"
+    }
+  ]
+}
